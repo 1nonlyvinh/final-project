@@ -44,3 +44,6 @@ function checkTime(i) {
   return i;
 }
 
+window.onload = function() {
+  document.getElementById("my_audio").play();
+}
