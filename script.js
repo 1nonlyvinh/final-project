@@ -28,22 +28,44 @@ function prevSlide() {
 // Initialize the carousel
 showSlide(currentIndex);
 
-function startTime() {
-  const today = new Date();
-  let h = today.getHours();
-  let m = today.getMinutes();
-  let s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
-  setTimeout(startTime, 1000);
-}
-
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-
 window.onload = function() {
   document.getElementById("my_audio").play();
 }
+
+  let startTime;
+
+  function startTimer() {
+    startTime = Date.now(); // Record the initial time in milliseconds
+    setInterval(updateTimer, 1000); // Update the timer every second (1000 milliseconds)
+  }
+
+  function updateTimer() {
+    const currentTime = Date.now(); // Get the current time
+    const elapsedMilliseconds = currentTime - startTime; // Calculate the difference
+    const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000); // Convert to seconds
+
+    // Format and display the time
+    document.getElementById('time-elapsed').textContent = elapsedSeconds + " seconds"; //
+  }
+
+  // Start the timer when the page loads
+  window.onload = startTimer;
+
+let currentColor = 'white'; 
+
+function changeBackgroundToBlack() {
+ if (currentColor === 'black') {
+        document.body.style.backgroundColor = 'white'; // Change to white
+        currentColor = 'white'; 
+          myHeading.style.color = 'black'; // Or any color you prefer
+          myParagraph.style.color = 'black'; // Or any color you prefer
+      } else {
+        document.body.style.backgroundColor = 'black'; // Change to black
+        currentColor = 'black';
+          myHeading.style.color = 'white'; // Or any color you prefer
+          myParagraph.style.color = 'white'; // Or any color you prefer
+      }
+};
+
+const myHeading = document.getElementById('pagetime');
+const myParagraph = document.getElementById('time-elapsed');
