@@ -28,43 +28,45 @@ function prevSlide() {
 // Initialize the carousel
 showSlide(currentIndex);
 
-window.onload = function() {
-  document.getElementById("my_audio").play();
+function playMusic() {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+}
+playMusic()
+
+let startTime;
+
+function startTimer() {
+  startTime = Date.now(); // Record the initial time in milliseconds
+  setInterval(updateTimer, 1000); // Update the timer every second (1000 milliseconds)
 }
 
-  let startTime;
+function updateTimer() {
+  const currentTime = Date.now(); // Get the current time
+  const elapsedMilliseconds = currentTime - startTime; // Calculate the difference
+  const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000); // Convert to seconds
 
-  function startTimer() {
-    startTime = Date.now(); // Record the initial time in milliseconds
-    setInterval(updateTimer, 1000); // Update the timer every second (1000 milliseconds)
-  }
+  // Format and display the time
+  document.getElementById('time-elapsed').textContent = elapsedSeconds + " seconds"; //
+}
 
-  function updateTimer() {
-    const currentTime = Date.now(); // Get the current time
-    const elapsedMilliseconds = currentTime - startTime; // Calculate the difference
-    const elapsedSeconds = Math.floor(elapsedMilliseconds / 1000); // Convert to seconds
+// Start the timer when the page loads
+window.onload = startTimer;
 
-    // Format and display the time
-    document.getElementById('time-elapsed').textContent = elapsedSeconds + " seconds"; //
-  }
-
-  // Start the timer when the page loads
-  window.onload = startTimer;
-
-let currentColor = 'white'; 
+let currentColor = 'white';
 
 function changeBackgroundToBlack() {
- if (currentColor === 'black') {
-        document.body.style.backgroundColor = 'white'; // Change to white
-        currentColor = 'white'; 
-          myHeading.style.color = 'black'; // Or any color you prefer
-          myParagraph.style.color = 'black'; // Or any color you prefer
-      } else {
-        document.body.style.backgroundColor = 'black'; // Change to black
-        currentColor = 'black';
-          myHeading.style.color = 'white'; // Or any color you prefer
-          myParagraph.style.color = 'white'; // Or any color you prefer
-      }
+  if (currentColor === 'black') {
+    document.body.style.backgroundColor = 'white'; // Change to white
+    currentColor = 'white';
+    myHeading.style.color = 'black'; // Or any color you prefer
+    myParagraph.style.color = 'black'; // Or any color you prefer
+  } else {
+    document.body.style.backgroundColor = 'black'; // Change to black
+    currentColor = 'black';
+    myHeading.style.color = 'white'; // Or any color you prefer
+    myParagraph.style.color = 'white'; // Or any color you prefer
+  }
 };
 
 const myHeading = document.getElementById('pagetime');
