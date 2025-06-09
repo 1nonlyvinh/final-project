@@ -14,7 +14,7 @@ body {
   width: 80%;
   max-width: 250px;
   overflow: hidden;
-  border: 2px solid #ddd;
+  border: 10px solid #777171;
   border-radius: 10px;
 }
 
@@ -71,4 +71,18 @@ body {
   right: 10px;
   flex-direction: row;
   margin-right: 10px; 
+}
+
+.popcorn-img {
+  width: 255px;
+  height: 249px;
+  position: absolute;
+  left: 40px;
+  top: 266px;
+}
+
+h3 {
+  position: absolute;
+  left: 65px;
+  top: 200px; 
 }

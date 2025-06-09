@@ -59,15 +59,32 @@ function changeBackgroundToBlack() {
   if (currentColor === 'black') {
     document.body.style.backgroundColor = 'white'; // Change to white
     currentColor = 'white';
-    myHeading.style.color = 'black'; // Or any color you prefer
-    myParagraph.style.color = 'black'; // Or any color you prefer
+    myHeading.style.color = 'black'; 
+    myParagraph.style.color = 'black'; 
+    myHeading3.style.color = 'black'; 
   } else {
     document.body.style.backgroundColor = 'black'; // Change to black
     currentColor = 'black';
-    myHeading.style.color = 'white'; // Or any color you prefer
-    myParagraph.style.color = 'white'; // Or any color you prefer
+    myHeading.style.color = 'white'; 
+    myParagraph.style.color = 'white'; 
+    myHeading3.style.color = 'white'; 
   }
 };
 
 const myHeading = document.getElementById('pagetime');
 const myParagraph = document.getElementById('time-elapsed');
+const myHeading3 = document.getElementById('heading3')
+
+function shakeImage() {
+      const image = document.getElementById('popcorn');
+      let position = 0;
+      const interval = setInterval(() => {
+        const offset = (position % 2 === 0 ? 10 : -10); // Alternate left and right
+        image.style.transform = `translateX(${offset}px)`;
+        position++;
+        if (position > 5) { // Stop after 6 shakes
+          clearInterval(interval);
+          image.style.transform = 'translateX(0)'; // Reset position
+        }
+      }, 100); // Shake every 100ms
+}
