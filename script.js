@@ -88,3 +88,19 @@ function shakeImage() {
         }
       }, 100); // Shake every 100ms
 }
+
+const pop = document.getElementById("popcorn");
+const head3 = document.getElementById("heading3");
+const pgtime = document.getElementById("pagetime");
+const timeelap = document.getElementById("time-elapsed");
+const bwmode = document.getElementById("mode");
+const lock = document.getElementById('lockscreen');
+
+function hideItems() {
+  pop.style.visibility = "hidden";
+  head3.style.visibility = "hidden";
+  pgtime.style.visibility = "hidden";
+  timeelap.style.visibility = "hidden";
+  mode.style.visibility = "hidden";
+  lock.style.visibility = "hidden";
+} 

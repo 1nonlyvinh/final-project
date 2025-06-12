@@ -59,6 +59,13 @@ body {
   right: 15px;
 }
 
+.randombuttons {
+  position: fixed; 
+  top: 120px; 
+  right: 15px; 
+  
+}
+
 .darkmode :hover {
   background-color: black;
   color: white;

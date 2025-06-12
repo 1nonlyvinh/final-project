@@ -24,6 +24,9 @@
         alt="">
       <img src="https://i.pinimg.com/originals/1e/09/e7/1e09e750c094adb628c45937aed86e3f.gif" alt="">
       <img src="https://mindsparklemag.com/wp-content/uploads/2018/08/OS_04.gif" alt="">
+      <img src="https://cdn.myportfolio.com/b37ed4cb8247d46c4503e8618117e864/25d15354-18f9-4392-8d6b-437d0792d31c_rw_1200.gif?h=15ff22d333a5ff108cfff3c164c01c9d" alt="">
+      <img src="https://i.pinimg.com/originals/28/e5/62/28e5625a9f0b92506dd02eeb725cb0ee.gif" alt="">
+      <img src="https://media0.giphy.com/media/l3nSQg4ZcjBhbgzrq/source.gif" alt="">
     </div>
     <button class="next" onclick="nextSlide()">&#10095;</button>
   </div>
@@ -33,7 +36,11 @@
   </div>
 
   <audio id="myAudio" src="Clair-de-lune-piano.mp3" preload="auto"></audio>
-  <button class="darkmode" onclick="changeBackgroundToBlack()">Dark/Light Mode</button>
+
+  <div class="randombuttons">
+      <button class="darkmode" id="mode" onclick="changeBackgroundToBlack()">Dark/Light Mode</button>
+      <button class="lockscreen" id="lockscreen" onclick="hideItems()">Lock Screen</button>
+  </div>
   <div class="time">
     <h4 id="pagetime">Time Wasting your Time:</h4>
     <p id="time-elapsed">0 seconds</p>
